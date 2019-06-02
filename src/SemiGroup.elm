@@ -47,6 +47,8 @@ import Platform.Sub
 import Set
 
 
+{-| Main type.
+-}
 type SemiGroup a
     = SemiGroup (a -> a -> a)
 
