@@ -2,6 +2,7 @@ module SemiGroup exposing
     ( SemiGroup(..)
     , Sum(..)
     , Product(..)
+    , append
     , string
     , sum
     , product
@@ -11,7 +12,6 @@ module SemiGroup exposing
     , set
     , cmd
     , sub
-    , append
     )
 
 {-| A module to define generic functions for semigroup.
@@ -22,6 +22,8 @@ module SemiGroup exposing
 @docs SemiGroup
 @docs Sum
 @docs Product
+
+@docs append
 
 
 # SemiGroup types for popular types
