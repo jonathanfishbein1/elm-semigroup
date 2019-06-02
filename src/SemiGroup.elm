@@ -1,7 +1,9 @@
 module SemiGroup exposing
     ( SemiGroup(..)
+    , Sum(..)
     , append
     , string
+    , sum
     )
 
 import Array
