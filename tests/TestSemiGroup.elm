@@ -39,6 +39,16 @@ suite =
                         SemiGroup.append SemiGroup.product (SemiGroup.Product one) (SemiGroup.append SemiGroup.product (SemiGroup.Product two) (SemiGroup.Product three))
                 in
                 Expect.equal leftSide rightSide
+        , Test.fuzz3 (Fuzz.list Fuzz.int) (Fuzz.list Fuzz.int) (Fuzz.list Fuzz.int) "tests that ++ equivalent to SemiGroup.append for list" <|
+            \listOne listTwo listThree ->
+                let
+                    leftSide =
+                        SemiGroup.append SemiGroup.list (SemiGroup.append SemiGroup.list listOne listTwo) listThree
+
+                    rightSide =
+                        SemiGroup.append SemiGroup.list listOne (SemiGroup.append SemiGroup.list listTwo listThree)
+                in
+                Expect.equal leftSide rightSide
 
         -- , Test.fuzz (Fuzz.intRange -10 10) "tests List.product equivalent to Monoid.concat Monoid.product " <|
         --     \randomlyGeneratedInt ->
