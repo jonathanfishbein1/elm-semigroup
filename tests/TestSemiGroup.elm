@@ -60,14 +60,4 @@ suite =
                 in
                 Expect.equal leftSide rightSide
 
-        -- , Test.fuzz (Fuzz.intRange -10 10) "tests List.product equivalent to Monoid.concat Monoid.product " <|
-        --     \randomlyGeneratedInt ->
-        --         let
-        --             expected =
-        --                 Monoid.Product randomlyGeneratedInt
-        --         in
-        --         randomlyGeneratedInt
-        --             |> Monoid.Product
-        --             |> Monoid.append Monoid.product (Monoid.Product 1)
-        --             |> Expect.equal expected
         ]
