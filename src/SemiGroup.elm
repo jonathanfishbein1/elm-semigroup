@@ -1,4 +1,8 @@
-module SemiGroup exposing (SemiGroup(..))
+module SemiGroup exposing
+    ( SemiGroup(..)
+    , append
+    , string
+    )
 
 import Array
 import Dict
