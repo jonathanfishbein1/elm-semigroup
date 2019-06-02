@@ -1,14 +1,38 @@
 module SemiGroup exposing
-    ( Product(..)
-    , SemiGroup(..)
+    ( SemiGroup(..)
     , Sum(..)
-    , append
-    , array
-    , list
-    , product
+    , Product(..)
     , string
     , sum
+    , product
+    , list
+    , array
+    , append
     )
+
+{-| A module to define generic functions for semigroup.
+
+
+# Types
+
+@docs SemiGroup
+@docs Sum
+@docs Product
+
+
+# SemiGroup types for popular types
+
+@docs string
+@docs sum
+@docs product
+@docs list
+@docs array
+@docs dict
+@docs set
+@docs cmd
+@docs sub
+
+-}
 
 import Array
 import Dict
