@@ -7,6 +7,10 @@ module SemiGroup exposing
     , product
     , list
     , array
+    , dict
+    , set
+    , cmd
+    , sub
     , append
     )
 
