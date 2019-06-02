@@ -29,17 +29,17 @@ suite =
                         SemiGroup.append SemiGroup.sum (SemiGroup.Sum one) (SemiGroup.append SemiGroup.sum (SemiGroup.Sum two) (SemiGroup.Sum three))
                 in
                 Expect.equal leftSide rightSide
+        , Test.fuzz3 Fuzz.int Fuzz.int Fuzz.int "tests that multiplication equivalent to SemiGroup.append for Product" <|
+            \one two three ->
+                let
+                    leftSide =
+                        SemiGroup.append SemiGroup.product (SemiGroup.append SemiGroup.product (SemiGroup.Product one) (SemiGroup.Product two)) (SemiGroup.Product three)
 
-        -- , Test.fuzz (Fuzz.list Fuzz.int) "tests List.sum equivalent to Monoid.concat Monoid.sum " <|
-        --     \randomlyGeneratedIntList ->
-        --         let
-        --             expected =
-        --                 Monoid.Sum <| List.sum randomlyGeneratedIntList
-        --         in
-        --         randomlyGeneratedIntList
-        --             |> List.map Monoid.Sum
-        --             |> Monoid.concat Monoid.sum
-        --             |> Expect.equal expected
+                    rightSide =
+                        SemiGroup.append SemiGroup.product (SemiGroup.Product one) (SemiGroup.append SemiGroup.product (SemiGroup.Product two) (SemiGroup.Product three))
+                in
+                Expect.equal leftSide rightSide
+
         -- , Test.fuzz (Fuzz.intRange -10 10) "tests List.product equivalent to Monoid.concat Monoid.product " <|
         --     \randomlyGeneratedInt ->
         --         let

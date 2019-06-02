@@ -1,7 +1,9 @@
 module SemiGroup exposing
-    ( SemiGroup(..)
+    ( Product(..)
+    , SemiGroup(..)
     , Sum(..)
     , append
+    , product
     , string
     , sum
     )
