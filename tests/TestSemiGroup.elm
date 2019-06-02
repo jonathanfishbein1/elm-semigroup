@@ -29,7 +29,7 @@ suite =
                         SemiGroup.append SemiGroup.sum (SemiGroup.Sum one) (SemiGroup.append SemiGroup.sum (SemiGroup.Sum two) (SemiGroup.Sum three))
                 in
                 Expect.equal leftSide rightSide
-        , Test.fuzz3 Fuzz.int Fuzz.int Fuzz.int "tests that multiplication equivalent to SemiGroup.append for Product" <|
+        , Test.fuzz3 (Fuzz.intRange -10 10) (Fuzz.intRange -10 10) (Fuzz.intRange -10 10) "tests that multiplication equivalent to SemiGroup.append for Product" <|
             \one two three ->
                 let
                     leftSide =
@@ -47,6 +47,16 @@ suite =
 
                     rightSide =
                         SemiGroup.append SemiGroup.list listOne (SemiGroup.append SemiGroup.list listTwo listThree)
+                in
+                Expect.equal leftSide rightSide
+        , Test.fuzz3 (Fuzz.array Fuzz.int) (Fuzz.array Fuzz.int) (Fuzz.array Fuzz.int) "tests that ++ equivalent to SemiGroup.append for array" <|
+            \arrayOne arrayTwo arrayThree ->
+                let
+                    leftSide =
+                        SemiGroup.append SemiGroup.array (SemiGroup.append SemiGroup.array arrayOne arrayTwo) arrayThree
+
+                    rightSide =
+                        SemiGroup.append SemiGroup.array arrayOne (SemiGroup.append SemiGroup.array arrayTwo arrayThree)
                 in
                 Expect.equal leftSide rightSide
 

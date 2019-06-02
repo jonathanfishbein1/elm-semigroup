@@ -3,6 +3,7 @@ module SemiGroup exposing
     , SemiGroup(..)
     , Sum(..)
     , append
+    , array
     , list
     , product
     , string
