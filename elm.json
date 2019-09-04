@@ -1,7 +1,7 @@
 {
     "type": "package",
     "name": "jonathanfishbein1/elm-semigroup",
-    "summary": "A semigroup package",
+    "summary": "DEPRECATED A semigroup package",
     "license": "BSD-3-Clause",
     "version": "1.0.0",
     "exposed-modules": [
