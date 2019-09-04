@@ -3,8 +3,7 @@
 ## Summary
 
 
-Use 
-https://package.elm-lang.org/packages/nikita-volkov/typeclasses/latest/
+UNMAINTAINED! Use https://package.elm-lang.org/packages/nikita-volkov/typeclasses/latest/
 
 
 A module to define generic functions for semigroup.  If you want your types be instances of the SemiGroup typeclass.  Although I'm still learning, semigroups are like interfaces for types that can be 'mushed' together in some way.
